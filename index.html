@@ -440,31 +440,62 @@ body{
   }
 }
 @media (max-width:767px){
-  section[style*=".82fr 1.18fr"]{
-  display:block !important;
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-  overflow-x:hidden !important;
-}
 
-section[style*=".82fr 1.18fr"] > aside,
-section[style*=".82fr 1.18fr"] > div{
-  display:block !important;
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-  box-sizing:border-box !important;
-}
+  /* ===== RECIPE CONTENT: MOBILE STACK ===== */
 
-section[style*=".82fr 1.18fr"] > div{
-  padding:30px 16px 60px !important;
-}
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"]{
+    display:flex !important;
+    flex-direction:column !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+  }
 
-section[style*=".82fr 1.18fr"] li{
-  width:100% !important;
-  max-width:100% !important;
-  box-sizing:border-box !important;
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] > aside{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    border-right:0 !important;
+    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  }
+
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] > div{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    padding:30px 16px 60px !important;
+  }
+
+  /* ===== PREPARATION STEPS ===== */
+
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] ol{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] li{
+    display:grid !important;
+    grid-template-columns:44px minmax(0,1fr) !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    gap:12px !important;
+  }
+
+  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] li p{
+    min-width:0 !important;
+    max-width:100% !important;
+    overflow-wrap:anywhere !important;
+  }
+
 }
 }</style>
 </helmet>
