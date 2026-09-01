@@ -26,6 +26,402 @@ input::placeholder{color:rgba(236,238,242,.35)}
 @keyframes sweep{from{transform:translateX(-120%)}to{transform:translateX(220%)}}
 @keyframes ring{to{transform:rotate(360deg)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  /* =========================================================
+   RESPONSIVE — TABLET + MOBILE
+   Desktop 1024px+ остаётся без изменений
+   ========================================================= */
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+/* =========================
+   TABLET — 768px–1023px
+   ========================= */
+
+@media (min-width:768px) and (max-width:1023px){
+
+  header{
+    padding:12px 22px !important;
+    gap:16px !important;
+  }
+
+  header > div:first-child{
+    gap:12px !important;
+  }
+
+  header > div:nth-child(2){
+    max-width:420px !important;
+  }
+
+  header input{
+    font-size:13px !important;
+    padding:11px 16px !important;
+  }
+
+  /* Hero */
+  section > div:first-child{
+    padding:48px 24px 32px !important;
+  }
+
+  section > div:first-child h1{
+    font-size:clamp(52px,8vw,86px) !important;
+    line-height:.9 !important;
+  }
+
+  section > div:first-child p{
+    font-size:16px !important;
+  }
+
+  /* Categories */
+  section > div:nth-child(2){
+    padding-left:22px !important;
+    padding-right:22px !important;
+    top:54px !important;
+  }
+
+  /* Recipe cards */
+  section > div:nth-child(3){
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:16px !important;
+    padding:22px !important;
+  }
+
+  section > div:nth-child(3) article{
+    min-width:0 !important;
+  }
+
+  /* Recipe detail top */
+  section[style*="grid-template-columns:1.1fr .9fr"]{
+    grid-template-columns:1fr !important;
+  }
+
+  section[style*="grid-template-columns:1.1fr .9fr"] > div{
+    border-right:0 !important;
+    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  }
+
+  /* Recipe hero image */
+  section[style*="grid-template-columns:1.1fr .9fr"] > div:last-child{
+    min-height:420px !important;
+  }
+
+  /* Ingredients + preparation */
+  section[style*="grid-template-columns:.82fr 1.18fr"]{
+    grid-template-columns:1fr !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] aside{
+    border-right:0 !important;
+    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] aside > div{
+    position:static !important;
+  }
+
+  /* Cooking mode */
+  div[style*="grid-template-columns:1.45fr .55fr"]{
+    grid-template-columns:1fr .65fr !important;
+  }
+
+  div[style*="grid-template-columns:1.45fr .55fr"] > div{
+    padding:34px 28px !important;
+  }
+
+  div[style*="grid-template-columns:1.45fr .55fr"] p{
+    font-size:clamp(32px,4vw,50px) !important;
+  }
+}
+
+
+/* =========================
+   MOBILE — до 767px
+   ========================= */
+
+@media (max-width:767px){
+
+  html,
+  body{
+    min-width:0 !important;
+    width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  /* Header */
+  header{
+    padding:11px 14px !important;
+    gap:10px !important;
+    flex-wrap:wrap !important;
+  }
+
+  header > div:first-child{
+    gap:9px !important;
+    flex:none !important;
+  }
+
+  header > div:first-child button span:last-child{
+    font-size:11px !important;
+    letter-spacing:.18em !important;
+  }
+
+  header > div:first-child > span:last-child{
+    display:none !important;
+  }
+
+  header > div:nth-child(2){
+    order:3 !important;
+    flex-basis:100% !important;
+    max-width:none !important;
+    width:100% !important;
+  }
+
+  header input{
+    width:100% !important;
+    font-size:13px !important;
+    padding:11px 15px !important;
+  }
+
+  header > button{
+    font-size:10px !important;
+    padding:10px 13px !important;
+    flex:none !important;
+  }
+
+  /* Main hero */
+  section > div:first-child{
+    padding:34px 16px 28px !important;
+    gap:14px !important;
+  }
+
+  section > div:first-child > span{
+    font-size:9px !important;
+    letter-spacing:.2em !important;
+  }
+
+  section > div:first-child h1{
+    font-size:clamp(42px,13vw,68px) !important;
+    line-height:.9 !important;
+    letter-spacing:-.045em !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  section > div:first-child p{
+    font-size:14px !important;
+    line-height:1.5 !important;
+  }
+
+  /* Admin panel */
+  section > div:first-child > div{
+    max-width:100% !important;
+  }
+
+  section > div:first-child input{
+    min-width:0 !important;
+    width:100% !important;
+  }
+
+  /* Categories */
+  section > div:nth-child(2){
+    padding:10px 14px !important;
+    gap:7px !important;
+    top:88px !important;
+    overflow-x:auto !important;
+    flex-wrap:nowrap !important;
+    scrollbar-width:none !important;
+  }
+
+  section > div:nth-child(2)::-webkit-scrollbar{
+    display:none !important;
+  }
+
+  section > div:nth-child(2) button{
+    flex:none !important;
+  }
+
+  /* Recipe cards — ONE column */
+  section > div:nth-child(3){
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:14px !important;
+    padding:18px 14px 60px !important;
+  }
+
+  section > div:nth-child(3) article{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  section > div:nth-child(3) article h3{
+    font-size:21px !important;
+  }
+
+  /* Recipe detail */
+  section[style*="grid-template-columns:1.1fr .9fr"]{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  section[style*="grid-template-columns:1.1fr .9fr"] > div{
+    padding:22px 16px 30px !important;
+    border-right:0 !important;
+    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  }
+
+  section[style*="grid-template-columns:1.1fr .9fr"] h1{
+    font-size:clamp(38px,11vw,58px) !important;
+    line-height:.94 !important;
+  }
+
+  section[style*="grid-template-columns:1.1fr .9fr"] p{
+    font-size:15px !important;
+  }
+
+  /* Stats — 2 × 2 */
+  section[style*="grid-template-columns:1.1fr .9fr"] div[style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+
+  section[style*="grid-template-columns:1.1fr .9fr"] div[style*="grid-template-columns:repeat(4,1fr)"] > div{
+    padding:14px 10px !important;
+    border-right:1px solid rgba(236,238,242,.08) !important;
+    border-bottom:1px solid rgba(236,238,242,.08) !important;
+  }
+
+  /* Hero photo */
+  section[style*="grid-template-columns:1.1fr .9fr"] > div:last-child{
+    min-height:300px !important;
+    height:300px !important;
+  }
+
+  /* Ingredients + preparation */
+  section[style*="grid-template-columns:.82fr 1.18fr"]{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] aside{
+    padding:28px 16px 40px !important;
+    border-right:0 !important;
+    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] aside > div{
+    position:static !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] h2{
+    font-size:27px !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] aside button{
+    max-width:100% !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] > div:last-child{
+    padding:30px 16px 60px !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] > div:last-child h2{
+    font-size:27px !important;
+  }
+
+  /* Preparation steps */
+  section[style*="grid-template-columns:.82fr 1.18fr"] li{
+    grid-template-columns:44px minmax(0,1fr) !important;
+    gap:12px !important;
+    padding:15px !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] li > div:first-child{
+    font-size:32px !important;
+  }
+
+  section[style*="grid-template-columns:.82fr 1.18fr"] li p{
+    font-size:15px !important;
+    line-height:1.5 !important;
+  }
+
+  /* Cooking mode */
+  div[style*="grid-template-columns:1.45fr .55fr"]{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:1fr auto !important;
+    overflow:auto !important;
+  }
+
+  /* Cooking header */
+  div[style*="grid-template-columns:1.45fr .55fr"]{
+    min-height:0 !important;
+  }
+
+  /* Cook mode top bar */
+  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child{
+    padding:14px 16px !important;
+    gap:10px !important;
+  }
+
+  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child > div{
+    gap:8px !important;
+  }
+
+  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child span:first-child{
+    font-size:9px !important;
+  }
+
+  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child span:nth-child(2){
+    font-size:12px !important;
+  }
+
+  /* Active cooking step */
+  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child{
+    padding:28px 18px !important;
+    justify-content:flex-start !important;
+    gap:18px !important;
+  }
+
+  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child p{
+    max-width:none !important;
+    font-size:clamp(30px,9vw,46px) !important;
+    line-height:1.05 !important;
+  }
+
+  /* Timer */
+  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child div[style*="width:180px"]{
+    width:140px !important;
+    height:140px !important;
+  }
+
+  /* Cooking ingredients */
+  div[style*="grid-template-columns:1.45fr .55fr"] > div:last-child{
+    border-left:0 !important;
+    border-top:1px solid rgba(236,238,242,.12) !important;
+    padding:22px 18px !important;
+    max-height:38vh !important;
+  }
+
+  /* Prevent long text from creating horizontal overflow */
+  h1,
+  h2,
+  h3,
+  p,
+  span,
+  button,
+  input{
+    max-width:100% !important;
+  }
+
+  img{
+    max-width:100% !important;
+  }
+}
 </style>
 </helmet>
 <div style="position:relative;min-height:100vh;background:#07070a;overflow:clip">
