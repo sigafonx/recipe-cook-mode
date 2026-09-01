@@ -264,9 +264,26 @@ body{
   }
 
   /* Recipe detail */
-  section[style*="grid-template-columns:1.1fr .9fr"]{
+  @media (max-width:767px){
+  section[style*="1.1fr"]{
     display:grid !important;
-    grid-template-columns:minmax(0,1fr) !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  section[style*="1.1fr"] > div{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  section[style*="1.1fr"] > div:last-child{
+    width:100% !important;
+    min-width:0 !important;
+    height:300px !important;
+    min-height:300px !important;
+  }
+}
   }
 
   section[style*="grid-template-columns:1.1fr .9fr"] > div{
