@@ -441,17 +441,31 @@ body{
 }
 @media (max-width:767px){
   section[style*=".82fr 1.18fr"]{
-    display:grid !important;
-    grid-template-columns:minmax(0,1fr) !important;
-    width:100% !important;
-    min-width:0 !important;
-  }
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  overflow-x:hidden !important;
+}
 
-  section[style*=".82fr 1.18fr"] > aside,
-  section[style*=".82fr 1.18fr"] > div{
-    width:100% !important;
-    min-width:0 !important;
-  }
+section[style*=".82fr 1.18fr"] > aside,
+section[style*=".82fr 1.18fr"] > div{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+}
+
+section[style*=".82fr 1.18fr"] > div{
+  padding:30px 16px 60px !important;
+}
+
+section[style*=".82fr 1.18fr"] li{
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
 }</style>
 </helmet>
 <div style="position:relative;min-height:100vh;background:#07070a;overflow:clip">
