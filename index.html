@@ -439,7 +439,20 @@ body{
     max-width:100% !important;
   }
 }
-</style>
+@media (max-width:767px){
+  section[style*=".82fr 1.18fr"]{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  section[style*=".82fr 1.18fr"] > aside,
+  section[style*=".82fr 1.18fr"] > div{
+    width:100% !important;
+    min-width:0 !important;
+  }
+}</style>
 </helmet>
 <div style="position:relative;min-height:100vh;background:#07070a;overflow:clip">
 
