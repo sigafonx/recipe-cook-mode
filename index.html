@@ -27,477 +27,542 @@ input::placeholder{color:rgba(236,238,242,.35)}
 @keyframes ring{to{transform:rotate(360deg)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
   /* =========================================================
-   RESPONSIVE — TABLET + MOBILE
-   Desktop 1024px+ остаётся без изменений
-   ========================================================= */
-
-html,
-body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden !important;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-/* =========================
-   TABLET — 768px–1023px
-   ========================= */
-
-@media (min-width:768px) and (max-width:1023px){
-
-  header{
-    padding:12px 22px !important;
-    gap:16px !important;
-  }
-
-  header > div:first-child{
-    gap:12px !important;
-  }
-
-  header > div:nth-child(2){
-    max-width:420px !important;
-  }
-
-  header input{
-    font-size:13px !important;
-    padding:11px 16px !important;
-  }
-
-  /* Hero */
-  section > div:first-child{
-    padding:48px 24px 32px !important;
-  }
-
-  section > div:first-child h1{
-    font-size:clamp(52px,8vw,86px) !important;
-    line-height:.9 !important;
-  }
-
-  section > div:first-child p{
-    font-size:16px !important;
-  }
-
-  /* Categories */
-  section > div:nth-child(2){
-    padding-left:22px !important;
-    padding-right:22px !important;
-    top:54px !important;
-  }
-
-  /* Recipe cards */
-  section > div:nth-child(3){
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-    gap:16px !important;
-    padding:22px !important;
-  }
-
-  section > div:nth-child(3) article{
-    min-width:0 !important;
-  }
-
-  /* Recipe detail top */
-  section[style*="grid-template-columns:1.1fr .9fr"]{
-    grid-template-columns:1fr !important;
-  }
-
-  section[style*="grid-template-columns:1.1fr .9fr"] > div{
-    border-right:0 !important;
-    border-bottom:1px solid rgba(236,238,242,.1) !important;
-  }
-
-  /* Recipe hero image */
-  section[style*="grid-template-columns:1.1fr .9fr"] > div:last-child{
-    min-height:420px !important;
-  }
-
-  /* Ingredients + preparation */
-  section[style*="grid-template-columns:.82fr 1.18fr"]{
-    grid-template-columns:1fr !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] aside{
-    border-right:0 !important;
-    border-bottom:1px solid rgba(236,238,242,.1) !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] aside > div{
-    position:static !important;
-  }
-
-  /* Cooking mode */
-  div[style*="grid-template-columns:1.45fr .55fr"]{
-    grid-template-columns:1fr .65fr !important;
-  }
-
-  div[style*="grid-template-columns:1.45fr .55fr"] > div{
-    padding:34px 28px !important;
-  }
-
-  div[style*="grid-template-columns:1.45fr .55fr"] p{
-    font-size:clamp(32px,4vw,50px) !important;
-  }
-}
-
-
-/* =========================
-   MOBILE — до 767px
-   ========================= */
-
-@media (max-width:767px){
+     RESPONSIVE — TABLET + MOBILE
+     Clean structural adaptation. Desktop 1024px+ is unchanged.
+     ========================================================= */
 
   html,
   body{
-    min-width:0 !important;
-    width:100% !important;
+    width:100%;
+    max-width:100%;
     overflow-x:hidden !important;
   }
 
-  /* Header */
-  header{
-    padding:11px 14px !important;
-    gap:10px !important;
-    flex-wrap:wrap !important;
-  }
-
-  header > div:first-child{
-    gap:9px !important;
-    flex:none !important;
-  }
-
-  header > div:first-child button span:last-child{
-    font-size:11px !important;
-    letter-spacing:.18em !important;
-  }
-
-  header > div:first-child > span:last-child{
-    display:none !important;
-  }
-
-  header > div:nth-child(2){
-    order:3 !important;
-    flex-basis:100% !important;
-    max-width:none !important;
-    width:100% !important;
-  }
-
-  header input{
-    width:100% !important;
-    font-size:13px !important;
-    padding:11px 15px !important;
-  }
-
-  header > button{
-    font-size:10px !important;
-    padding:10px 13px !important;
-    flex:none !important;
-  }
-
-  /* Main hero */
-  section > div:first-child{
-    padding:34px 16px 28px !important;
-    gap:14px !important;
-  }
-
-  section > div:first-child > span{
-    font-size:9px !important;
-    letter-spacing:.2em !important;
-  }
-
-  section > div:first-child h1{
-    font-size:clamp(42px,13vw,68px) !important;
-    line-height:.9 !important;
-    letter-spacing:-.045em !important;
-    overflow-wrap:anywhere !important;
-  }
-
-  section > div:first-child p{
-    font-size:14px !important;
-    line-height:1.5 !important;
-  }
-
-  /* Admin panel */
-  section > div:first-child > div{
-    max-width:100% !important;
-  }
-
-  section > div:first-child input{
-    min-width:0 !important;
-    width:100% !important;
-  }
-
-  /* Categories */
-  section > div:nth-child(2){
-    padding:10px 14px !important;
-    gap:7px !important;
-    top:88px !important;
-    overflow-x:auto !important;
-    flex-wrap:nowrap !important;
-    scrollbar-width:none !important;
-  }
-
-  section > div:nth-child(2)::-webkit-scrollbar{
-    display:none !important;
-  }
-
-  section > div:nth-child(2) button{
-    flex:none !important;
-  }
-
-  /* Recipe cards — ONE column */
-  section > div:nth-child(3){
-    display:grid !important;
-    grid-template-columns:minmax(0,1fr) !important;
-    gap:14px !important;
-    padding:18px 14px 60px !important;
-  }
-
-  section > div:nth-child(3) article{
-    width:100% !important;
-    min-width:0 !important;
-  }
-
-  section > div:nth-child(3) article h3{
-    font-size:21px !important;
-  }
-
-  /* Recipe detail */
-  @media (max-width:767px){
-  section[style*="1.1fr"]{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    width:100% !important;
-    min-width:0 !important;
-  }
-
-  section[style*="1.1fr"] > div{
-    width:100% !important;
-    min-width:0 !important;
-  }
-
-  section[style*="1.1fr"] > div:last-child{
-    width:100% !important;
-    min-width:0 !important;
-    height:300px !important;
-    min-height:300px !important;
-  }
-}
-  }
-
-  section[style*="grid-template-columns:1.1fr .9fr"] > div{
-    padding:22px 16px 30px !important;
-    border-right:0 !important;
-    border-bottom:1px solid rgba(236,238,242,.1) !important;
-  }
-
-  section[style*="grid-template-columns:1.1fr .9fr"] h1{
-    font-size:clamp(38px,11vw,58px) !important;
-    line-height:.94 !important;
-  }
-
-  section[style*="grid-template-columns:1.1fr .9fr"] p{
-    font-size:15px !important;
-  }
-
-  /* Stats — 2 × 2 */
-  section[style*="grid-template-columns:1.1fr .9fr"] div[style*="grid-template-columns:repeat(4,1fr)"]{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-
-  section[style*="grid-template-columns:1.1fr .9fr"] div[style*="grid-template-columns:repeat(4,1fr)"] > div{
-    padding:14px 10px !important;
-    border-right:1px solid rgba(236,238,242,.08) !important;
-    border-bottom:1px solid rgba(236,238,242,.08) !important;
-  }
-
-  /* Hero photo */
-  section[style*="grid-template-columns:1.1fr .9fr"] > div:last-child{
-    min-height:300px !important;
-    height:300px !important;
-  }
-
-  /* Ingredients + preparation */
-  section[style*="grid-template-columns:.82fr 1.18fr"]{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] aside{
-    padding:28px 16px 40px !important;
-    border-right:0 !important;
-    border-bottom:1px solid rgba(236,238,242,.1) !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] aside > div{
-    position:static !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] h2{
-    font-size:27px !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] aside button{
-    max-width:100% !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] > div:last-child{
-    padding:30px 16px 60px !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] > div:last-child h2{
-    font-size:27px !important;
-  }
-
-  /* Preparation steps */
-  section[style*="grid-template-columns:.82fr 1.18fr"] li{
-    grid-template-columns:44px minmax(0,1fr) !important;
-    gap:12px !important;
-    padding:15px !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] li > div:first-child{
-    font-size:32px !important;
-  }
-
-  section[style*="grid-template-columns:.82fr 1.18fr"] li p{
-    font-size:15px !important;
-    line-height:1.5 !important;
-  }
-
-  /* Cooking mode */
-  div[style*="grid-template-columns:1.45fr .55fr"]{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    grid-template-rows:1fr auto !important;
-    overflow:auto !important;
-  }
-
-  /* Cooking header */
-  div[style*="grid-template-columns:1.45fr .55fr"]{
-    min-height:0 !important;
-  }
-
-  /* Cook mode top bar */
-  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child{
-    padding:14px 16px !important;
-    gap:10px !important;
-  }
-
-  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child > div{
-    gap:8px !important;
-  }
-
-  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child span:first-child{
-    font-size:9px !important;
-  }
-
-  div[style*="grid-template-rows:auto 1fr auto"] > div:first-child span:nth-child(2){
-    font-size:12px !important;
-  }
-
-  /* Active cooking step */
-  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child{
-    padding:28px 18px !important;
-    justify-content:flex-start !important;
-    gap:18px !important;
-  }
-
-  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child p{
-    max-width:none !important;
-    font-size:clamp(30px,9vw,46px) !important;
-    line-height:1.05 !important;
-  }
-
-  /* Timer */
-  div[style*="grid-template-columns:1.45fr .55fr"] > div:first-child div[style*="width:180px"]{
-    width:140px !important;
-    height:140px !important;
-  }
-
-  /* Cooking ingredients */
-  div[style*="grid-template-columns:1.45fr .55fr"] > div:last-child{
-    border-left:0 !important;
-    border-top:1px solid rgba(236,238,242,.12) !important;
-    padding:22px 18px !important;
-    max-height:38vh !important;
-  }
-
-  /* Prevent long text from creating horizontal overflow */
-  h1,
-  h2,
-  h3,
-  p,
-  span,
-  button,
-  input{
-    max-width:100% !important;
+  *,
+  *::before,
+  *::after{
+    box-sizing:border-box;
   }
 
   img{
-    max-width:100% !important;
-  }
-}
-@media (max-width:767px){
-
-  /* ===== RECIPE CONTENT: MOBILE STACK ===== */
-
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"]{
-    display:flex !important;
-    flex-direction:column !important;
-    width:100% !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    overflow:visible !important;
+    max-width:100%;
   }
 
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] > aside{
-    display:block !important;
-    width:100% !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    box-sizing:border-box !important;
-    border-right:0 !important;
-    border-bottom:1px solid rgba(236,238,242,.1) !important;
+  /* =========================
+     TABLET — 768px–1023px
+     ========================= */
+  @media (min-width:768px) and (max-width:1023px){
+
+    .app-header{
+      padding:12px 22px !important;
+      gap:16px !important;
+    }
+
+    .app-header > div:first-child{
+      gap:12px !important;
+    }
+
+    .app-header > div:nth-child(2){
+      max-width:420px !important;
+    }
+
+    .recipe-list > div:first-child{
+      padding:48px 24px 32px !important;
+    }
+
+    .recipe-list > div:first-child h1{
+      font-size:clamp(52px,8vw,86px) !important;
+      line-height:.9 !important;
+    }
+
+    .recipe-categories{
+      padding-left:22px !important;
+      padding-right:22px !important;
+    }
+
+    .recipe-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:16px !important;
+      padding:22px !important;
+    }
+
+    .recipe-detail-hero{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-detail-hero > div{
+      width:100% !important;
+      min-width:0 !important;
+      border-right:0 !important;
+      border-bottom:1px solid rgba(236,238,242,.1) !important;
+    }
+
+    .recipe-detail-hero > div:last-child{
+      min-height:420px !important;
+      height:420px !important;
+    }
+
+    .recipe-detail-content{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      min-width:0 !important;
+      overflow:visible !important;
+    }
+
+    .recipe-ingredients,
+    .recipe-preparation{
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+    }
+
+    .recipe-ingredients{
+      border-right:0 !important;
+      border-bottom:1px solid rgba(236,238,242,.1) !important;
+    }
+
+    .recipe-ingredients > div{
+      position:static !important;
+    }
+
+    .recipe-preparation{
+      padding:34px 28px 70px !important;
+    }
+
+    .recipe-step{
+      grid-template-columns:56px minmax(0,1fr) !important;
+      min-width:0 !important;
+    }
+
+    .cook-mode-main{
+      grid-template-columns:1fr .65fr !important;
+    }
   }
 
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] > div{
-    display:block !important;
-    width:100% !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    box-sizing:border-box !important;
-    padding:30px 16px 60px !important;
+  /* =========================
+     MOBILE — <=767px
+     ========================= */
+  @media (max-width:767px){
+
+    html,
+    body{
+      width:100% !important;
+      min-width:0 !important;
+      max-width:100% !important;
+      overflow-x:hidden !important;
+    }
+
+    /* Header */
+    .app-header{
+      padding:11px 14px !important;
+      gap:10px !important;
+      flex-wrap:wrap !important;
+    }
+
+    .app-header > div:first-child{
+      gap:9px !important;
+      flex:none !important;
+      min-width:0 !important;
+    }
+
+    .app-header > div:first-child > span:last-child{
+      display:none !important;
+    }
+
+    .app-header > div:first-child button span:last-child{
+      font-size:11px !important;
+      letter-spacing:.18em !important;
+    }
+
+    .app-header > div:nth-child(2){
+      order:3 !important;
+      flex:0 0 100% !important;
+      width:100% !important;
+      max-width:none !important;
+      min-width:0 !important;
+    }
+
+    .app-header input{
+      width:100% !important;
+      min-width:0 !important;
+      font-size:13px !important;
+      padding:11px 15px !important;
+    }
+
+    .app-header > button{
+      font-size:10px !important;
+      padding:10px 13px !important;
+      flex:none !important;
+    }
+
+    /* Main page */
+    .recipe-list > div:first-child{
+      padding:34px 16px 28px !important;
+      gap:14px !important;
+    }
+
+    .recipe-list > div:first-child > span{
+      font-size:9px !important;
+      letter-spacing:.2em !important;
+    }
+
+    .recipe-list > div:first-child h1{
+      font-size:clamp(42px,13vw,68px) !important;
+      line-height:.9 !important;
+      letter-spacing:-.045em !important;
+      overflow-wrap:anywhere !important;
+    }
+
+    .recipe-list > div:first-child p{
+      font-size:14px !important;
+      line-height:1.5 !important;
+    }
+
+    .recipe-list > div:first-child > div{
+      max-width:100% !important;
+    }
+
+    .recipe-list > div:first-child input{
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    /* Category rail */
+    .recipe-categories{
+      padding:10px 14px !important;
+      gap:7px !important;
+      top:88px !important;
+      overflow-x:auto !important;
+      flex-wrap:nowrap !important;
+      scrollbar-width:none !important;
+    }
+
+    .recipe-categories::-webkit-scrollbar{
+      display:none !important;
+    }
+
+    .recipe-categories button{
+      flex:none !important;
+    }
+
+    /* Recipe cards */
+    .recipe-grid{
+      display:grid !important;
+      grid-template-columns:minmax(0,1fr) !important;
+      gap:14px !important;
+      padding:18px 14px 60px !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-grid article{
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-grid article h3{
+      font-size:21px !important;
+    }
+
+    /* =====================================================
+       RECIPE DETAIL — THE IMPORTANT PART
+       ===================================================== */
+
+    .recipe-detail-hero{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      overflow:hidden !important;
+    }
+
+    .recipe-detail-hero > div{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+      border-right:0 !important;
+    }
+
+    .recipe-detail-hero > div:first-child{
+      padding:22px 16px 30px !important;
+      border-bottom:1px solid rgba(236,238,242,.1) !important;
+    }
+
+    .recipe-detail-hero h1{
+      max-width:100% !important;
+      font-size:clamp(38px,11vw,58px) !important;
+      line-height:.94 !important;
+      overflow-wrap:anywhere !important;
+    }
+
+    .recipe-detail-hero p{
+      max-width:100% !important;
+      font-size:15px !important;
+      line-height:1.5 !important;
+    }
+
+    /* Stats 2 × 2 */
+    .recipe-detail-hero > div:first-child > div:last-child{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-detail-hero > div:first-child > div:last-child > div{
+      min-width:0 !important;
+      padding:14px 10px !important;
+    }
+
+    /* Hero image: one full-width block */
+    .recipe-detail-hero > div:last-child{
+      display:block !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      height:min(78vw,360px) !important;
+      min-height:260px !important;
+      max-height:360px !important;
+      overflow:hidden !important;
+      background-position:center !important;
+      background-size:cover !important;
+    }
+
+    /* =====================================================
+       INGREDIENTS + PREPARATION — ONE COLUMN
+       ===================================================== */
+
+    .recipe-detail-content{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      overflow:hidden !important;
+    }
+
+    .recipe-ingredients,
+    .recipe-preparation{
+      display:block !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+    }
+
+    .recipe-ingredients{
+      padding:28px 16px 40px !important;
+      border-right:0 !important;
+      border-bottom:1px solid rgba(236,238,242,.1) !important;
+      overflow:hidden !important;
+    }
+
+    .recipe-ingredients > div{
+      position:static !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-ingredients h2,
+    .recipe-preparation h2{
+      font-size:27px !important;
+      max-width:100% !important;
+    }
+
+    .recipe-ingredients > div > div:nth-child(2){
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+    }
+
+    .recipe-ingredients ul{
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+    }
+
+    .recipe-ingredients li{
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+    }
+
+    .recipe-ingredients li button{
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+    }
+
+    .recipe-ingredients li button > span:last-child{
+      min-width:0 !important;
+      overflow-wrap:anywhere !important;
+    }
+
+    .recipe-ingredients > div > button:last-child{
+      max-width:100% !important;
+      box-sizing:border-box !important;
+    }
+
+    /* Preparation */
+    .recipe-preparation{
+      padding:30px 16px 60px !important;
+      overflow:hidden !important;
+    }
+
+    .recipe-steps{
+      display:flex !important;
+      flex-direction:column !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+      gap:14px !important;
+    }
+
+    .recipe-step{
+      display:grid !important;
+      grid-template-columns:44px minmax(0,1fr) !important;
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      box-sizing:border-box !important;
+      gap:12px !important;
+      padding:15px !important;
+      overflow:hidden !important;
+    }
+
+    .recipe-step > div:first-child{
+      font-size:32px !important;
+      min-width:0 !important;
+    }
+
+    .recipe-step > div:last-child{
+      min-width:0 !important;
+      max-width:100% !important;
+    }
+
+    .recipe-step p{
+      width:100% !important;
+      max-width:100% !important;
+      min-width:0 !important;
+      font-size:15px !important;
+      line-height:1.5 !important;
+      overflow-wrap:anywhere !important;
+      word-break:normal !important;
+    }
+
+    /* =====================================================
+       COOK MODE — FULL MOBILE LAYOUT
+       ===================================================== */
+
+    .cook-mode-root{
+      width:100vw !important;
+      max-width:100vw !important;
+      min-width:0 !important;
+      overflow:hidden !important;
+    }
+
+    .cook-mode-root > div:first-child{
+      padding:14px 16px !important;
+      gap:10px !important;
+      min-width:0 !important;
+    }
+
+    .cook-mode-root > div:first-child > div{
+      min-width:0 !important;
+      overflow:hidden !important;
+    }
+
+    .cook-mode-root > div:first-child span:nth-child(2){
+      min-width:0 !important;
+      max-width:45vw !important;
+      overflow:hidden !important;
+      text-overflow:ellipsis !important;
+    }
+
+    .cook-mode-main{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      grid-template-rows:minmax(0,1fr) auto !important;
+      width:100% !important;
+      min-width:0 !important;
+      overflow:hidden !important;
+    }
+
+    .cook-mode-main > div:first-child{
+      width:100% !important;
+      min-width:0 !important;
+      padding:28px 18px !important;
+      justify-content:flex-start !important;
+      gap:18px !important;
+      overflow:auto !important;
+    }
+
+    .cook-mode-main > div:first-child p{
+      width:100% !important;
+      max-width:none !important;
+      min-width:0 !important;
+      font-size:clamp(30px,9vw,46px) !important;
+      line-height:1.05 !important;
+      overflow-wrap:anywhere !important;
+    }
+
+    .cook-mode-main > div:first-child div[style*="width:180px"]{
+      width:140px !important;
+      height:140px !important;
+    }
+
+    .cook-mode-main > div:last-child{
+      width:100% !important;
+      min-width:0 !important;
+      max-width:100% !important;
+      max-height:34vh !important;
+      border-left:0 !important;
+      border-top:1px solid rgba(236,238,242,.12) !important;
+      padding:22px 18px !important;
+      overflow:auto !important;
+    }
+
+    .cook-mode-root > div:last-child{
+      padding:14px 16px !important;
+      gap:10px !important;
+      min-width:0 !important;
+    }
+
+    .cook-mode-root > div:last-child > span{
+      display:none !important;
+    }
+
+    .cook-mode-root > div:last-child > div{
+      min-width:0 !important;
+    }
+
+    .cook-mode-root > div:last-child button{
+      max-width:100% !important;
+    }
+
+    /* Never allow content itself to create a second horizontal page */
+    .recipe-detail-hero * ,
+    .recipe-detail-content * ,
+    .cook-mode-root *{
+      max-width:100%;
+    }
   }
-
-  /* ===== PREPARATION STEPS ===== */
-
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] ol{
-    width:100% !important;
-    max-width:100% !important;
-    margin:0 !important;
-    padding:0 !important;
-  }
-
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] li{
-    display:grid !important;
-    grid-template-columns:44px minmax(0,1fr) !important;
-    width:100% !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    box-sizing:border-box !important;
-    gap:12px !important;
-  }
-
-  section[style^="display:grid;grid-template-columns:.82fr 1.18fr"] li p{
-    min-width:0 !important;
-    max-width:100% !important;
-    overflow-wrap:anywhere !important;
-  }
-
-}
-}</style>
+</style>
 </helmet>
 <div style="position:relative;min-height:100vh;background:#07070a;overflow:clip">
 
@@ -508,7 +573,7 @@ body{
   </div>
 
   <div style="position:relative;z-index:1">
-  <header style="display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 34px;border-bottom:1px solid rgba(236,238,242,.1);position:sticky;top:0;z-index:20;background:rgba(7,7,10,.72);backdrop-filter:blur(18px)">
+  <header class="app-header" style="display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 34px;border-bottom:1px solid rgba(236,238,242,.1);position:sticky;top:0;z-index:20;background:rgba(7,7,10,.72);backdrop-filter:blur(18px)">
     <div style="display:flex;align-items:center;gap:20px;min-width:0">
       <button onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;background:transparent;border:none;padding:0;cursor:pointer;color:#eceef2;white-space:nowrap">
         <span style="width:9px;height:9px;border-radius:50%;background:#5eead4;box-shadow:0 0 12px 2px rgba(94,234,212,.8);animation:blink 2.4s ease-in-out infinite;display:block"></span>
@@ -523,7 +588,7 @@ body{
   </header>
 
   <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
-    <section>
+    <section class="recipe-list">
       <div style="padding:64px 34px 40px;display:flex;flex-direction:column;gap:18px;animation:riseIn .7s cubic-bezier(.2,.7,.2,1) both">
         <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#5eead4">Кулинарная библиотека</span>
         <h1 style="margin:0;font:900 clamp(52px,8.4vw,132px)/.86 Archivo,sans-serif;letter-spacing:-.05em;text-wrap:balance;background:linear-gradient(96deg,#ffffff 12%,#5eead4 52%,#a78bfa 92%);-webkit-background-clip:text;background-clip:text;color:transparent">Сто с лишним способов не остаться голодным</h1>
@@ -550,13 +615,13 @@ body{
         </sc-if>
       </div>
 
-      <div style="display:flex;gap:8px;flex-wrap:wrap;padding:14px 34px;border-top:1px solid rgba(236,238,242,.09);border-bottom:1px solid rgba(236,238,242,.09);position:sticky;top:57px;z-index:15;background:rgba(7,7,10,.78);backdrop-filter:blur(18px)">
+      <div class="recipe-categories" style="display:flex;gap:8px;flex-wrap:wrap;padding:14px 34px;border-top:1px solid rgba(236,238,242,.09);border-bottom:1px solid rgba(236,238,242,.09);position:sticky;top:57px;z-index:15;background:rgba(7,7,10,.78);backdrop-filter:blur(18px)">
         <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="9">
           <button onClick="{{ cat.pick }}" style="{{ cat.style }}">{{ cat.label }}</button>
         </sc-for>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:28px 34px 80px">
+      <div class="recipe-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:28px 34px 80px">
         <sc-for list="{{ visible }}" as="r" hint-placeholder-count="9">
           <article onClick="{{ r.open }}" style="{{ r.cardStyle }}" style-hover="transform:translateY(-6px);border-color:rgba(94,234,212,.55);box-shadow:0 22px 60px -22px rgba(94,234,212,.5),0 0 0 1px rgba(94,234,212,.18) inset">
             <div style="{{ r.coverStyle }}">
@@ -585,7 +650,7 @@ body{
 
   <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
     <div style="animation:riseIn .5s cubic-bezier(.2,.7,.2,1) both">
-      <section style="display:grid;grid-template-columns:1.1fr .9fr;border-bottom:1px solid rgba(236,238,242,.1)">
+      <section class="recipe-detail-hero" style="display:grid;grid-template-columns:1.1fr .9fr;border-bottom:1px solid rgba(236,238,242,.1)">
         <div style="padding:34px 34px 46px;display:flex;flex-direction:column;gap:22px;border-right:1px solid rgba(236,238,242,.1)">
           <button onClick="{{ goHome }}" style="align-self:flex-start;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;background:rgba(236,238,242,.04);border:1px solid rgba(236,238,242,.18);border-radius:999px;padding:10px 16px;cursor:pointer;color:#eceef2;white-space:nowrap;transition:.25s" style-hover="border-color:rgba(94,234,212,.8);color:#5eead4;box-shadow:0 0 24px -4px rgba(94,234,212,.5)">← Все рецепты</button>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -625,8 +690,8 @@ body{
         </div>
       </section>
 
-      <section style="display:grid;grid-template-columns:.82fr 1.18fr">
-        <aside style="border-right:1px solid rgba(236,238,242,.1);padding:38px 34px 70px">
+      <section class="recipe-detail-content" style="display:grid;grid-template-columns:.82fr 1.18fr">
+        <aside class="recipe-ingredients" style="border-right:1px solid rgba(236,238,242,.1);padding:38px 34px 70px">
           <div style="position:sticky;top:92px;display:flex;flex-direction:column;gap:18px">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px">
               <h2 style="margin:0;font:800 30px/1 Archivo,sans-serif;letter-spacing:-.03em">Ингредиенты</h2>
@@ -660,11 +725,11 @@ body{
           </div>
         </aside>
 
-        <div style="padding:38px 34px 96px;display:flex;flex-direction:column;gap:26px">
+        <div class="recipe-preparation" style="padding:38px 34px 96px;display:flex;flex-direction:column;gap:26px">
           <h2 style="margin:0;font:800 30px/1 Archivo,sans-serif;letter-spacing:-.03em">Приготовление</h2>
-          <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px">
+          <ol class="recipe-steps" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px">
             <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
-              <li style="display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start;padding:18px;border:1px solid rgba(236,238,242,.09);border-radius:16px;background:rgba(236,238,242,.025);transition:.25s" style-hover="border-color:rgba(94,234,212,.4);background:rgba(94,234,212,.05)">
+              <li class="recipe-step" style="display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start;padding:18px;border:1px solid rgba(236,238,242,.09);border-radius:16px;background:rgba(236,238,242,.025);transition:.25s" style-hover="border-color:rgba(94,234,212,.4);background:rgba(94,234,212,.05)">
                 <div style="font:900 42px/.9 Archivo,sans-serif;letter-spacing:-.05em;background:linear-gradient(160deg,#5eead4,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">{{ st.num }}</div>
                 <div style="display:flex;flex-direction:column;gap:10px">
                   <p style="margin:0;max-width:62ch;font:400 17px/1.55 Archivo,sans-serif;color:rgba(236,238,242,.86);text-wrap:pretty">{{ st.text }}</p>
@@ -681,7 +746,7 @@ body{
   </sc-if>
 
   <sc-if value="{{ cooking }}" hint-placeholder-val="{{ false }}">
-    <div style="position:fixed;inset:0;z-index:50;background:radial-gradient(120% 90% at 20% 0,rgba(94,234,212,.16),transparent 55%),radial-gradient(100% 80% at 90% 100%,rgba(167,139,250,.16),transparent 55%),#050507;color:#eceef2;display:grid;grid-template-rows:auto 1fr auto;animation:riseIn .35s cubic-bezier(.2,.7,.2,1) both">
+    <div class="cook-mode-root" style="position:fixed;inset:0;z-index:50;background:radial-gradient(120% 90% at 20% 0,rgba(94,234,212,.16),transparent 55%),radial-gradient(100% 80% at 90% 100%,rgba(167,139,250,.16),transparent 55%),#050507;color:#eceef2;display:grid;grid-template-rows:auto 1fr auto;animation:riseIn .35s cubic-bezier(.2,.7,.2,1) both">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 40px;border-bottom:1px solid rgba(236,238,242,.12)">
         <div style="display:flex;align-items:center;gap:16px;min-width:0">
           <span style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#5eead4;white-space:nowrap">Режим готовки</span>
@@ -691,7 +756,7 @@ body{
         <button onClick="{{ exitCook }}" style="font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;padding:11px 17px;border:1px solid rgba(236,238,242,.25);background:transparent;color:#eceef2;border-radius:999px;cursor:pointer;white-space:nowrap;flex:none;transition:.25s" style-hover="border-color:#fca5a5;color:#fca5a5;box-shadow:0 0 26px -4px rgba(252,165,165,.6)">Выйти</button>
       </div>
 
-      <div style="display:grid;grid-template-columns:1.45fr .55fr;overflow:hidden">
+      <div class="cook-mode-main" style="display:grid;grid-template-columns:1.45fr .55fr;overflow:hidden">
         <div key="{{ stepKey }}" style="padding:46px 44px;display:flex;flex-direction:column;justify-content:center;gap:26px;animation:stepIn .4s cubic-bezier(.2,.7,.2,1) both">
           <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#5eead4">{{ activeStepLabel }}</div>
           <p style="margin:0;max-width:22ch;font:800 clamp(34px,4.1vw,60px)/1.08 Archivo,sans-serif;letter-spacing:-.035em;text-wrap:balance">{{ activeText }}</p>
